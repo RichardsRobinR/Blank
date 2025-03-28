@@ -5,7 +5,7 @@ function App() {
   
 
   return (
-    <div className="w-screen h-screen max-h-screen bg-transparent">
+    <div className="w-screen h-screen max-h-screen ">
       <div className="w-full h-full">
         <Editor />
       </div>

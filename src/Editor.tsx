@@ -11,12 +11,16 @@ export const Editor = () => {
         rules: [],
         colors: {
             'editor.background': '#000000',
-            'editor.foreground': '#ffffff',
-            'editorCursor.foreground': '#8B0000',
-            'editor.lineHighlightBackground': '#0000FF20',
-            'editorLineNumber.foreground': '#008800',
-            'editor.selectionBackground': '#88000030',
-            'editor.inactiveSelectionBackground': '#88000015',
+            'editor.foreground': '#D4D4D4',
+            'editorCursor.foreground': '#FFFFFF',
+            // 'editor.lineHighlightBackground': '#2F2F2F',
+            'editorLineNumber.foreground': '#858585',
+            'editor.selectionBackground': '#264F78',
+            'editor.inactiveSelectionBackground': '#3A3D41',
+            'editorIndentGuide.background': '#404040',
+            'editorIndentGuide.activeBackground': '#707070',
+            'editor.selectionHighlightBackground': '#ADD6FF26',
+            'editorOverviewRuler.border': '#010101'
             
         }
     }
@@ -26,6 +30,7 @@ export const Editor = () => {
     useEffect(() => {
         if (monacoEl.current && !editor) {
             const ed = monaco.editor.create(monacoEl.current, {
+                
                 value: "hello",
                 language: 'typescript',
                 theme: 'myCoolTheme',
@@ -45,5 +50,5 @@ export const Editor = () => {
         }
     }, []);
 
-    return <div className="h-full w-full bg-transparent" ref={monacoEl}></div>;
+    return <div className="h-full w-full " ref={monacoEl}></div>;
 };
