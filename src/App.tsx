@@ -6,7 +6,7 @@ function App() {
 
   return (
     <div className="w-screen h-screen max-h-screen ">
-      <div className="w-full h-full">
+      <div className="w-full h-full bg-[#121212]">
         <Editor />
       </div>
     </div>
