@@ -35,7 +35,7 @@ const Editor = () => {
     const [editor, setEditor] = useState<monaco.editor.IStandaloneCodeEditor | null>(null);
     const monacoEl = useRef<HTMLDivElement>(null);
     const [value, setValue] = useState<string>('');
-    const [counts, setCounts] = useState({ lines: 0, words: 0, chars: 0 });
+    // const [counts, setCounts] = useState({ lines: 0, words: 0, chars: 0 });
 
 
     const sendMessage = useCallback((content: string) => {
@@ -55,24 +55,24 @@ const Editor = () => {
     );
 
 
-    const updateCounts = useCallback(() => {    
-        if (editor) {
-            const model = editor.getModel();
-            if (model) {
-                const text = model.getValue();
-                const lines = model.getLineCount();
-                const words = text.trim() ? text.trim().split(/\s+/).length : 0;
-                const chars = text.length;
+    // const updateCounts = useCallback(() => {    
+    //     if (editor) {
+    //         const model = editor.getModel();
+    //         if (model) {
+    //             const text = model.getValue();
+    //             const lines = model.getLineCount();
+    //             const words = text.trim() ? text.trim().split(/\s+/).length : 0;
+    //             const chars = text.length;
                 
-                setCounts({
-                    lines,
-                    words,
-                    chars
-                });
-            }
-        }
-    }
-    , [editor]);
+    //             setCounts({
+    //                 lines,
+    //                 words,
+    //                 chars
+    //             });
+    //         }
+    //     }
+    // }
+    // , [editor]);
 
 
 
@@ -106,7 +106,7 @@ const Editor = () => {
                 const newValue = ed.getModel()?.getValue();
                 if (newValue !== undefined) {
                     setValue(newValue);
-                    updateCounts();
+                    // updateCounts();
                 }
             });
             
